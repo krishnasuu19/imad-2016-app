@@ -4,23 +4,63 @@ var path = require('path');
 
 var app = express();
 
-var articleOne = {
-    title: "Article One",
-    date: "oct 15",
-    heading: "Article one: ",
-    content: `
-             <p>
-                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
-            </p>
-            <p>
-                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
-            </p>
-             <p>
-                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
-            </p>
-             <p>
-                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
-            </p>`
+var articles = {
+    'article-one' : {
+                    title: "Article One",
+                    date: "oct 15",
+                    heading: "Article one: ",
+                    content: `
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                            <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>`
+                            },
+            'article-two' : {
+                          title: "Article Two",
+                    date: "oct 16",
+                    heading: "Article Two: ",
+                    content: `
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                            <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>`
+                            },
+            'article-three' : {
+                  title: "Article Three",
+                    date: "oct 17",
+                    heading: "Article Three: ",
+                    content: `
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                            <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>
+                             <p>
+                                this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!this si the ocntent that will apear in my article 1!
+                            </p>`
+                            
+            }
+            `
     
 };
 function createTemp (data) {
@@ -28,12 +68,12 @@ function createTemp (data) {
             var heading = data.heading;
             var content = data.content;
             var title = data.title;
-            var templateHtml= `
+            var templateHtml = `
                 <html>
                 <head>
-                    <title>
+                   <title>
                        ${title}
-                    </title>
+                 </title>
                     <meta name="viewport" content="width=device-width, intial-scale=1" />
                     <link href="/ui/style.css" rel="stylesheet" />
                     
@@ -67,17 +107,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
- res.send(createTemp(articleOne));
+app.get('/:articleName', function (req, res) {
+ var articleName = req.params.articleName;
+ res.send(createTemp(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
-});
-
-app.get('/article-three', function (req, res) {
- res.sendFile(path.join(__dirname, 'ui', 'article3.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
