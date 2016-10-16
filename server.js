@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
@@ -71,9 +71,7 @@ function createTemp (data) {
             var templateHtml = `
                 <html>
                 <head>
-                   <title>
-                       ${title}
-                 </title>
+                  
                     <meta name="viewport" content="width=device-width, intial-scale=1" />
                     <link href="/ui/style.css" rel="stylesheet" />
                     
@@ -99,7 +97,7 @@ function createTemp (data) {
                 </body>
             </html>`;
         return templateHtml;
-}
+}*/
 
 app.use(morgan('combined'));
 
