@@ -6,9 +6,65 @@ var app = express();
 
 app.use(morgan( "combined"));
 
+var arOne = {
+    title: "Profile",
+    heading: "About Myself",
+    content: `  <p>
+                    Name: K.Sudarshana Lakshmi
+                    Age: 18
+                    Occupation: Student
+                    
+                    I love to dance and currently im aiming to do something in my life! But overall i am pretty clueless about life and in life!
+                    Love to have companyaround! Quite lonely feeling at times!
+                    
+                </p>
+                
+                <p>
+                    
+                    How about you? What do u like to do?
+                    
+                </p>`
+    
+};
+function create (data) {
+    
+    var title = data.title;
+    var heading = data.heading;
+    var content = data.content;
+    var template = ` <html>
+            <head>
+                <title>
+                    ${title}
+                </title>
+               <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div class="contain">
+                    <div>
+                        <a href="/"> Home </a>
+                    </div>
+                    <hr/>
+                    <h1>
+                       
+                      ${heading}
+                        
+                    </h1>
+                </div>
+                    <hr/>
+                <div class="container">
+                    <div>
+                       ${content}
+                    </div>
+                </div>
+                
+            </body>
+        </html>`;
+    return template;
+}
+
 
 app.get('/articleone' , function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article one.html'));
+  res.send(create(arOne));
 });
 
 app.get('/articletwo' , function (req, res) {
