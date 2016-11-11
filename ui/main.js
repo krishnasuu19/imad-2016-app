@@ -8,6 +8,6 @@ var marginLeft = 0;
 var img = document.getElementById('madi');
 img.onclick = function() {
     marginLeft = marginLeft + 10;
-    img.style.marginLeft = marginLeft = 'px';
+    img.style.marginLeft = marginLeft + 'px';
 };
 
