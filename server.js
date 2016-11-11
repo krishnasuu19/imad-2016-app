@@ -12,11 +12,11 @@ app.get('/articleone' , function (req, res) {
 });
 
 app.get('/articletwo' , function (req, res) {
-   res.send(" Aritcile two is requested!"); 
+   res.sendFile(path.join(__dirname, 'ui', 'article two.html'));
 });
 
 app.get('/articlethree' , function (req, res) {
-   res.send(" Aritcile three is requested!"); 
+    res.sendFile(path.join(__dirname, 'ui', 'article three.html'));
 });
 
 
