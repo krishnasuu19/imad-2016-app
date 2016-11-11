@@ -8,7 +8,7 @@ app.use(morgan( "combined"));
 
 
 app.get('/articleone' , function (req, res) {
-   res.send(" Aritcile one is requested!"); 
+   res.sendFile(path.join(__dirname, 'ui', 'article one.html'));
 });
 
 app.get('/articletwo' , function (req, res) {
