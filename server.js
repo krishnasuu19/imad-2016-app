@@ -6,25 +6,64 @@ var app = express();
 
 app.use(morgan( "combined"));
 
-var arOne = {
-    title: "Profile",
-    heading: "About Myself",
-    content: `  <p>
-                    Name: K.Sudarshana Lakshmi
-                    Age: 18
-                    Occupation: Student
+var articles ={
+    'articleone': {
+        title: "Profile",
+        heading: "About Myself",
+        content: `  <p>
+                        Name: K.Sudarshana Lakshmi
+                        Age: 18
+                        Occupation: Student
+                        
+                        I love to dance and currently im aiming to do something in my life! But overall i am pretty clueless about life and in life!
+                        Love to have companyaround! Quite lonely feeling at times!
+                        
+                    </p>
                     
-                    I love to dance and currently im aiming to do something in my life! But overall i am pretty clueless about life and in life!
-                    Love to have companyaround! Quite lonely feeling at times!
+                    <p>
+                        
+                        How about you? What do u like to do?
+                        
+                    </p>`
+    },
+    'articletwo': {
+         title: "Profile",
+        heading: "About Myself",
+        content: `  <p>
+                        Name: K.Sudarshana Lakshmi
+                        Age: 18
+                        Occupation: Student
+                        
+                        I love to dance and currently im aiming to do something in my life! But overall i am pretty clueless about life and in life!
+                        Love to have companyaround! Quite lonely feeling at times!
+                        
+                    </p>
                     
-                </p>
-                
-                <p>
+                    <p>
+                        
+                        How about you? What do u like to do?
+                        
+                    </p>`
+    },
+    'articlethree': {
+         title: "Profile",
+        heading: "About Myself",
+        content: `  <p>
+                        Name: K.Sudarshana Lakshmi
+                        Age: 18
+                        Occupation: Student
+                        
+                        I love to dance and currently im aiming to do something in my life! But overall i am pretty clueless about life and in life!
+                        Love to have companyaround! Quite lonely feeling at times!
+                        
+                    </p>
                     
-                    How about you? What do u like to do?
-                    
-                </p>`
-    
+                    <p>
+                        
+                        How about you? What do u like to do?
+                        
+                    </p>`
+    },
 };
 function create (data) {
     
@@ -63,17 +102,11 @@ function create (data) {
 }
 
 
-app.get('/articleone' , function (req, res) {
-  res.send(create(arOne));
+app.get('/:articlesName' , function (req, res) {
+    var articlesName = req.params.articlesName;    
+    res.send(create(articles[articlesName]));
 });
 
-app.get('/articletwo' , function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article two.html'));
-});
-
-app.get('/articlethree' , function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article three.html'));
-});
 
 
 app.get('/', function (req, res) {
