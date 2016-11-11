@@ -6,6 +6,20 @@ var app = express();
 
 app.use(morgan( "combined"));
 
+
+app.get('/ui/articleone' , function (req, res) {
+   res.send(" Aritcile one is requested!"); 
+});
+
+app.get('/ui/articletwo' , function (req, res) {
+   res.send(" Aritcile two is requested!"); 
+});
+
+app.get('/ui/articlethree' , function (req, res) {
+   res.send(" Aritcile three is requested!"); 
+});
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
