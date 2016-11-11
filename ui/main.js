@@ -4,8 +4,10 @@ element.innerHTML = "Changed";
 
 ///to make move
 
+var marginLeft = 0;
 var img = document.getElementById('madi');
 img.onclick = function() {
-    img.style.marginLeft = '100px';
+    marginLeft = marginLeft + 10;
+    img.style.marginLeft = marginLeft = 'px';
 };
 
